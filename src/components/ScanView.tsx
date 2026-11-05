@@ -130,10 +130,10 @@ export function ScanView(props: { onManual: () => void }) {
   const setName = (c: Candidate) => setsByLang[c.lang].get(setIdOfCard(c.brief.id))?.name ?? setIdOfCard(c.brief.id)
 
   return (
-    <section className="view">
+    <section className="view view-scan">
       <h1 className="view-title">Scanner une carte</h1>
 
-      <div hidden={phase === 'done'}>
+      <div className="scan-stage" hidden={phase === 'done'}>
           <div className="scanner">
             {cameraError ? (
               <div className="camera-off"><p>{cameraError}</p></div>
